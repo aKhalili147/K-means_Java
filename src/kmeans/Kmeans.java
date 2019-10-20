@@ -44,7 +44,7 @@ public class Kmeans {
     	indexPoint = (int) (Math.random()*(this.allPoints.size()));
     	Point p = this.allPoints.get(indexPoint);
     	c.setCenter(p);
-    	c.setIndex(indexPoint);
+    	c.setIndex(j);
     	this.clusters.add(c);
     }
     
@@ -101,8 +101,7 @@ public class Kmeans {
 	  for(Cluster c: this.clusters) c.resetPoints();
 	  
 	  for(Point p: this.allPoints) {
-		  int indexCluster = findNearestCluster(p);
-		  clusters.get(indexCluster).addPoint(p);
+		  this.clusters.get(findNearestCluster(p)).addPoint(p);;
 	  }
 	  
 	  for(Cluster c: this.clusters) {
