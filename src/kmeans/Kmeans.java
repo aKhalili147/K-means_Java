@@ -3,7 +3,7 @@ package kmeans;
 import java.util.ArrayList;
 
 public class Kmeans {
-  private int k;
+  private int k; // number of clusters
   private ArrayList<Point>   allPoints;
   private ArrayList<Cluster> clusters;
   
@@ -39,7 +39,13 @@ public class Kmeans {
      * end
      *   
      */
-
+    for(int j=0;j<this.k;j++) {
+    	Cluster c = new Cluster();
+    	indexPoint = (int) (Math.random()*(this.allPoints.size()));
+    	Point p = this.allPoints.get(indexPoint);
+    	c.setCenter(p);
+    	this.clusters.add(c);
+    }
     // TODO
      
   }

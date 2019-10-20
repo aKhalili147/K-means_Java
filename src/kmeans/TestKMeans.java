@@ -3,7 +3,7 @@ package kmeans;
 public class TestKMeans {
 
   public static void main(String[] args) {
-    Kmeans classifier = new Kmeans("iris_text.data",
+    Kmeans classifier = new Kmeans("/home/efi/eclipse-workspace/Kmeans/src/kmeans/iris_text.data",
         ",", /* separator */
         3,   /* k */
         4  /* nb attributes */);
