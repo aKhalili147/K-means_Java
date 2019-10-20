@@ -44,11 +44,20 @@ public class Cluster {
      *   add p to pAccu
      * end
      * 
+     * 
      * 2. Now average each component
      * for each dimension i of pAccu do
      *   attribute i <- attribute i / nbPoints
      * end
      */
+    for(Point p : this.points)
+    {
+      pAccu = pAccu.addTo(p);
+    }
+    for(int i = 0 ; i< pAccu.getDimension(); i++)
+    {
+        pAccu.setAttribute(i,pAccu.getAttribute(i) / this.points.size());
+    }	
     
     // TODO
     

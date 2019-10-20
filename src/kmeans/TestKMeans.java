@@ -12,12 +12,12 @@ public class TestKMeans {
     classifier.initClusters();
     classifier.printClusters();
     
-/*    for(int i = 0; i < 1000; i++) classifier.kmeansStep();
+    for(int i = 0; i < 1000; i++) classifier.kmeansStep();
     
     System.out.println("\n*** Final clusters");
     classifier.printClusters();
     
-    Util.exportDataToCSV("clusters.data", classifier.toString());*/
+    Util.exportDataToCSV("clusters.data", classifier.toString());
   }
 
 }

@@ -98,6 +98,16 @@ public class Kmeans {
      * end
      */
     
+	  for(Cluster c: this.clusters) c.resetPoints();
+	  
+	  for(Point p: this.allPoints) {
+		  int indexCluster = findNearestCluster(p);
+		  clusters.get(indexCluster).addPoint(p);
+	  }
+	  
+	  for(Cluster c: this.clusters) {
+		 c.updateCenter();
+	  }
     // TODO
   }
   
