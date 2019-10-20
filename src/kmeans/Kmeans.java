@@ -44,10 +44,10 @@ public class Kmeans {
     	indexPoint = (int) (Math.random()*(this.allPoints.size()));
     	Point p = this.allPoints.get(indexPoint);
     	c.setCenter(p);
+    	c.setIndex(indexPoint);
     	this.clusters.add(c);
     }
-    // TODO
-     
+    
   }
   
   /* =================== Question 2 ===================
@@ -63,7 +63,13 @@ public class Kmeans {
      *   if d < dMin : dMin is now d and the target cluster is c
      * end
      */
-    
+    for(Cluster c: this.clusters) {
+    	double d = p.distanceTo(c.getCenter());
+    	if(d<dMin) {
+    		dMin = (float)d;
+    		target_cluster = c.getIndex();
+    	}
+    }
     // TODO
     
     if (target_cluster == -1 ) throw new RuntimeException("Target cluster index is negative");
